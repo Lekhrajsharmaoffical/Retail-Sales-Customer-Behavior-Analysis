@@ -1,7 +1,3 @@
-🛠️ SQL Techniques Used
-TechniqueUsageJOINs3-table joins across all analysis queriesSubqueriesOutlier removal (IQR + 3-STD), top category/location lookupsCTEs3-level RFM chain, 4-level cohort chain, 8-CTE dashboardWindow FunctionsNTILE, RANK, DENSE_RANK, LAG, FIRST_VALUE, SUM/COUNT/AVG OVER PARTITION BYCASE WHENInventory risk tiering, RFM segment labelling, null location handlingDate FunctionsSTR_TO_DATE, YEAR, MONTH, MONTHNAME, DATEDIFF, TIMESTAMPDIFF, DATE_FORMATAggregationsSUM, COUNT, AVG, ROUND, GROUP BY, ORDER BYDMLALTER TABLE, UPDATE, DELETE with safe-update override.
-📁 Dataset
-TableRecordsDescriptioncustomers1,000 → 999 (after cleaning)CustomerID, Age, Gender, Location, JoinDateproduct_inventory200ProductID, ProductName, Category, StockLevel, Pricesales_transaction5,002 → 4,982 (after cleaning)TransactionID, CustomerID, ProductID, QuantityPurchased, Price, TransactionDate.
  Data Cleaning Outlier Removal — Customers (IQR Method)
 WITH ordered AS (
     SELECT CustomerID, age,
